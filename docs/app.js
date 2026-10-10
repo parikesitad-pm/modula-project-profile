@@ -4,16 +4,264 @@ const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const projects = [
-  {id:'forge', name:'Forge', number:'01', category:'product', type:'PRODUCT / THINKING COMPANION', tagline:'A place for unfinished thoughts.', description:'An AI-assisted thinking companion for capturing sparks of ideas, expanding fragments, and thinking in a non-linear way. Built as a Rails and React TypeScript application.', tags:['Ruby on Rails','React','TypeScript','Tailwind CSS'], links:[['Repository','https://github.com/parikesitad-pm/forge'],['Live frontend','https://frontendreactts.vercel.app']]},
-  {id:'stack', name:'STACK', number:'02', category:'product', type:'PRODUCT / MARKDOWN WORKSPACE', tagline:'Markdown notes without the noise.', description:'A Markdown-first notes workspace with offline-friendly local storage, per-user isolation, organization tools, and an intentionally focused editor.', tags:['React','TypeScript','IndexedDB','Auth0','AWS'], links:[['Repository','https://github.com/parikesitad-pm/stack-react_ts_with_aws_deployment'],['Live website','https://stack-md.online']]},
-  {id:'untitled', name:'untitled', number:'03', category:'product', type:'PRODUCT / ASSESSMENT', tagline:'Define yourself.', description:'Interactive assessments spanning activity builders, participant areas, weighted scoring, leaderboards and a durable stats/results system. Frontend and Firebase backend are separate repositories.', tags:['React','TypeScript','Firebase','Firestore','Cloudinary'], links:[['Frontend','https://github.com/parikesitad-pm/frontend_untitled_modula_project_react_ts'],['Backend','https://github.com/parikesitad-pm/backend_untitled_modula_project_firebase']]},
-  {id:'dotmod', name:'DOTMOD', number:'04', category:'tooling', type:'TOOLING / WORKSTATION', tagline:'Backup first. Rebuild later.', description:'Portable Windows environment backup-and-restore tooling, including configuration snapshots, developer profiles, safe rollback and reproducible workstation setup.', tags:['PowerShell','WinGet','Windows','Developer Tools'], links:[['Repository','https://github.com/parikesitad-pm/windows_dotfiles']]},
-  {id:'autofailover', name:'AutoFailover', number:'05', category:'desktop', type:'DESKTOP GUI / PYTHON', tagline:'Keep live connections alive.', description:'A Python desktop app with a CustomTkinter UI for network failover automation. Designed around healthy path selection and protection of live workloads such as vMix, OBS and Zoom.', tags:['Python','CustomTkinter','Networking','Automation'], links:[['Repository','https://github.com/parikesitad-pm/smart_auto_failover']]},
-  {id:'afrizal', name:'Afrizal Portfolio', number:'06', category:'creative', type:'CREATIVE / INTERACTIVE PORTFOLIO', tagline:'Motion, interaction and identity.', description:'A multilingual interactive portfolio for Afrizal Pramudyan, using custom interfaces, animation, and 3D to present multidisciplinary creative work.', tags:['React','TypeScript','GSAP','Three.js','i18n'], links:[['Repository','https://github.com/parikesitad-pm/ap_branding_react_ts'],['Live website','https://ap-branding-react-ts.vercel.app']]},
-  {id:'base', name:'MODULA Base', number:'07', category:'experiment', type:'EXPERIMENT / ERP + POS', tagline:'Exploring business-system foundations.', description:'An earlier ERP, inventory, POS and accounting architecture experiment. This is a legacy exploration, not a production-ready or commercially available product.', tags:['React','TypeScript','Ruby','ERP / POS'], links:[['Repository','https://github.com/parikesitad-pm/modula_base']]},
-  {id:'manjaro', name:'Manjaro Dotfiles', number:'08', category:'tooling', type:'SHELL / LINUX ENVIRONMENT', tagline:'A terminal-first development setup.', description:'Modular Manjaro GNOME development environment with automated Bash setup, Zsh configuration, Starship prompts, Kitty, and developer tools.', tags:['Bash','Zsh','Starship','Manjaro'], links:[['Repository','https://github.com/parikesitad-pm/dotfile_v2']]},
-  {id:'gundam', name:'Gundam GNOME', number:'09', category:'tooling', type:'SHELL / DESKTOP AUTOMATION', tagline:'A declarative Linux desktop.', description:'Script-driven GNOME desktop customization inspired by Gundam 00, with automated installation, theme presets, and lightweight Linux workstation tuning.', tags:['Shell','Bash','GNOME','Linux'], links:[['Repository','https://github.com/parikesitad-pm/gundam-celestial-gnome-theme']]}
+  {
+    "id": "forge",
+    "name": "Forge",
+    "number": "01",
+    "category": "product",
+    "group": "core",
+    "type": "CORE MODULA / THINKING COMPANION",
+    "tagline": "A place for unfinished thoughts.",
+    "description": "A thinking companion for capturing sparks and developing ideas. Rails + React TypeScript architecture, with AI-assisted features and an evolving workspace.",
+    "tags": [
+      "Rails",
+      "React",
+      "TypeScript",
+      "AI"
+    ],
+    "links": [
+      [
+        "Repository",
+        "https://github.com/parikesitad-pm/forge"
+      ],
+      [
+        "Live frontend",
+        "https://frontendreactts.vercel.app"
+      ]
+    ]
+  },
+  {
+    "id": "stack",
+    "name": "STACK",
+    "number": "02",
+    "category": "product",
+    "group": "core",
+    "type": "CORE MODULA / MARKDOWN",
+    "tagline": "Markdown notes without the noise.",
+    "description": "A Markdown-first, local-first writing space built on React and TypeScript with IndexedDB, Auth0 and cloud integration plans.",
+    "tags": [
+      "React",
+      "TypeScript",
+      "IndexedDB",
+      "Auth0"
+    ],
+    "links": [
+      [
+        "Repository",
+        "https://github.com/parikesitad-pm/stack-react_ts_with_aws_deployment"
+      ],
+      [
+        "Live website",
+        "https://stack-md.online"
+      ]
+    ]
+  },
+  {
+    "id": "untitled",
+    "name": "untitled",
+    "number": "03",
+    "category": "product",
+    "group": "core",
+    "type": "CORE MODULA / ASSESSMENTS",
+    "tagline": "Define yourself.",
+    "description": "Activity builder, assessment participant flows, scoring, leaderboards and result data. Frontend with React and backend with Firebase, developed as distinct repositories.",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Firebase",
+      "Cloudinary"
+    ],
+    "links": [
+      [
+        "Frontend",
+        "https://github.com/parikesitad-pm/frontend_untitled_modula_project_react_ts"
+      ],
+      [
+        "Backend",
+        "https://github.com/parikesitad-pm/backend_untitled_modula_project_firebase"
+      ]
+    ]
+  },
+  {
+    "id": "point",
+    "name": "POINT",
+    "number": "04",
+    "category": "product",
+    "group": "core",
+    "type": "CORE MODULA / POS & OPERATIONS",
+    "tagline": "Business operations, designed for the counter.",
+    "description": "POINT by MODULA is a React 19 + TypeScript frontend for point-of-sale and business operations. Includes owner dashboard, catalog management, and cashier login/terminal flows. Currently documented as a frontend mock evaluation, not a production payments solution.",
+    "tags": [
+      "React 19",
+      "TypeScript",
+      "Tailwind v4",
+      "Frontend prototype"
+    ],
+    "links": [
+      [
+        "Frontend repository",
+        "https://github.com/parikesitad-pm/point_by_modula_project_frontend"
+      ]
+    ]
+  },
+  {
+    "id": "base",
+    "name": "MODULA Base",
+    "number": "05",
+    "category": "experiment",
+    "group": "core",
+    "type": "CORE MODULA / EARLY FOUNDATION",
+    "tagline": "Where the business-system experiments began.",
+    "description": "An earlier architecture experiment exploring ERP, point of sale, inventory, supply-chain and accounting workflows. Legacy exploration—not presented as a live, production-ready enterprise system.",
+    "tags": [
+      "Ruby",
+      "React",
+      "ERP / POS",
+      "Legacy"
+    ],
+    "links": [
+      [
+        "Repository",
+        "https://github.com/parikesitad-pm/modula_base"
+      ]
+    ]
+  },
+  {
+    "id": "dotmod",
+    "name": "DOTMOD",
+    "number": "06",
+    "category": "tooling",
+    "group": "workbench",
+    "type": "WORKBENCH / WINDOWS & POWERSHELL",
+    "tagline": "Backup first. Rebuild later.",
+    "description": "Windows workstation backup-and-restore system with PowerShell, inventories, declarative developer profiles and safe restoration workflows.",
+    "tags": [
+      "PowerShell",
+      "WinGet",
+      "Windows",
+      "Automation"
+    ],
+    "links": [
+      [
+        "Repository",
+        "https://github.com/parikesitad-pm/windows_dotfiles"
+      ]
+    ]
+  },
+  {
+    "id": "autofailover",
+    "name": "AutoFailover",
+    "number": "07",
+    "category": "desktop",
+    "group": "workbench",
+    "type": "WORKBENCH / PYTHON GUI",
+    "tagline": "Keep live connections alive.",
+    "description": "A Python and CustomTkinter desktop tool for network failover automation focused on maintaining connectivity for Zoom, vMix and OBS live-production workloads.",
+    "tags": [
+      "Python",
+      "CustomTkinter",
+      "Networking"
+    ],
+    "links": [
+      [
+        "Repository",
+        "https://github.com/parikesitad-pm/smart_auto_failover"
+      ]
+    ]
+  },
+  {
+    "id": "manjaro",
+    "name": "Manjaro Dotfiles",
+    "number": "08",
+    "category": "tooling",
+    "group": "workbench",
+    "type": "WORKBENCH / SHELL",
+    "tagline": "Terminal-first development environment.",
+    "description": "Automated Manjaro GNOME setup with Zsh, Bash, Starship, Kitty, VS Code configuration, productivity aliases and development toolchains.",
+    "tags": [
+      "Zsh",
+      "Bash",
+      "Starship",
+      "Manjaro"
+    ],
+    "links": [
+      [
+        "Repository",
+        "https://github.com/parikesitad-pm/dotfile_v2"
+      ]
+    ]
+  },
+  {
+    "id": "gundam",
+    "name": "Gundam GNOME",
+    "number": "09",
+    "category": "tooling",
+    "group": "workbench",
+    "type": "WORKBENCH / LINUX DESKTOP",
+    "tagline": "Declarative desktop automation.",
+    "description": "Gundam Celestial GNOME desktop customization with Shell scripts, presets, performance-aware configuration and repeatable Linux setup.",
+    "tags": [
+      "Shell",
+      "GNOME",
+      "Linux",
+      "Bash"
+    ],
+    "links": [
+      [
+        "Repository",
+        "https://github.com/parikesitad-pm/gundam-celestial-gnome-theme"
+      ]
+    ]
+  },
+  {
+    "id": "xfce",
+    "name": "Gundam Glass XFCE",
+    "number": "10",
+    "category": "tooling",
+    "group": "workbench",
+    "type": "WORKBENCH / LINUX THEMING",
+    "tagline": "A scripted Linux desktop setup.",
+    "description": "Shell-driven XFCE setup and theme automation for a lightweight, customized Linux developer desktop.",
+    "tags": [
+      "Bash",
+      "XFCE",
+      "Shell"
+    ],
+    "links": [
+      [
+        "Repository",
+        "https://github.com/parikesitad-pm/xfce_themed"
+      ]
+    ]
+  },
+  {
+    "id": "afrizal",
+    "name": "Afrizal Portfolio",
+    "number": "11",
+    "category": "creative",
+    "group": "creative",
+    "type": "CREATIVE / INTERACTIVE PORTFOLIO",
+    "tagline": "Motion, interaction and identity.",
+    "description": "A multilingual React and TypeScript creative portfolio using GSAP, Three.js, animation and tailored interactions to present visual-design work.",
+    "tags": [
+      "React",
+      "TypeScript",
+      "GSAP",
+      "Three.js"
+    ],
+    "links": [
+      [
+        "Repository",
+        "https://github.com/parikesitad-pm/ap_branding_react_ts"
+      ],
+      [
+        "Live website",
+        "https://ap-branding-react-ts.vercel.app"
+      ]
+    ]
+  }
 ];
+
 const grid = $('#projectGrid'), modal = $('#projectDialog');
 const closeDialog = $('#closeDialog');
 function make(tag, cls, text) {const e = document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
@@ -30,14 +278,32 @@ closeDialog.addEventListener('click',()=>modal.close());
 modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
 function renderProjects(filter='all') {
  const selected=projects.filter(p=>filter==='all'||p.category===filter);
- grid.replaceChildren(...selected.map(p=>{
-   const card=make('button','project');card.type='button';card.setAttribute('aria-label','Open '+p.name+' details');
-   const top=make('div','project-top');top.append(make('span','project-index',p.number+' / 09'),make('span','project-type',p.category.toUpperCase()));
-   const heading=make('h3','',p.name),subtitle=make('p','',p.tagline),bottom=make('div','project-bottom');
-   bottom.append(make('span','',p.tags[0]),make('span','project-arrow','↗'));
-   card.append(top,heading,subtitle,bottom);
-   card.addEventListener('click',()=>openProject(p));return card;
- }));
+ grid.replaceChildren();
+ const groups=[
+  {id:'core',title:'01 / CORE MODULA ECOSYSTEM',subtitle:'Products and product foundations'},
+  {id:'workbench',title:'02 / SHELL, AUTOMATION & DESKTOP',subtitle:'Tools, workstations and GUI'},
+  {id:'creative',title:'03 / CREATIVE BUILDS',subtitle:'Motion and visual craft'}
+ ];
+ for(const group of groups){
+   const members=selected.filter(p=>p.group===group.id);
+   if(!members.length) continue;
+   const heading=make('div','project-group-label');
+   heading.append(make('span','project-group-name',group.title),make('span','project-group-subtitle',group.subtitle));
+   grid.append(heading);
+   for(const p of members){
+     const card=make('button','project');
+     card.type='button';
+     card.dataset.category=p.category;
+     card.setAttribute('aria-label','Open '+p.name+' project details');
+     const top=make('div','project-top');
+     top.append(make('span','project-index',p.number+' / 11'),make('span','project-type',p.category.toUpperCase()));
+     const headingText=make('h3','',p.name),subtitle=make('p','',p.tagline),bottom=make('div','project-bottom');
+     bottom.append(make('span','',p.tags[0]),make('span','project-arrow','↗'));
+     card.append(top,headingText,subtitle,bottom);
+     card.addEventListener('click',()=>openProject(p));
+     grid.append(card);
+   }
+ }
 }
 renderProjects();
 $$('.filter').forEach(button=>button.addEventListener('click',()=>{
@@ -86,7 +352,7 @@ if(!reduced && 'IntersectionObserver' in window){
 }else $$('.reveal').forEach(el=>el.classList.add('visible'));
 const terminal=$('#typedProjects');
 if(!reduced){
- const lines=['forge · stack · untitled','zsh · pwsh · bash · starship','build · break · learn · repeat'];
+ const lines=['forge · stack · untitled · point','zsh · bash · pwsh · starship','modula-base · shell · desktop'];
  let line=0,pos=0,erasing=false;
  function type(){
    const target=lines[line];
