@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#121019">
-  <meta name="description" content="Dap — full-stack developer in progress, shell enthusiast and builder of MODULA web and desktop applications.">
+  <meta name="theme-color" content="#17090e">
+  <meta name="description" content="Dap — shell enthusiast, full-stack developer in progress, and builder of MODULA projects including Forge, STACK, untitled, POINT and MODULA Base.">
   <meta property="og:title" content="parikesitad-pm — a MODULA project">
-  <meta property="og:description" content="Full-stack development, digital products, experiments and systems.">
+  <meta property="og:description" content="Crimson developer portfolio. MODULA products, shell automation, desktop tools and creative code.">
   <title>Dap (@parikesitad-pm) — a MODULA project</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
@@ -17,7 +17,7 @@
   <div class="noise" aria-hidden="true"></div><div class="pointer-glow" id="pointerGlow" aria-hidden="true"></div>
   <div class="reading-progress" id="progress" aria-hidden="true"></div>
   <header class="nav">
-    <a class="brand" href="#top"><span class="brand-mark">◈</span> MODULA<span class="brand-minor"> / a project index</span></a>
+    <a class="brand" href="#top"><span class="brand-mark">◈</span> MODULA<span class="brand-minor"> / CRIMSON EDITION</span></a>
     <nav aria-label="Main navigation"><a href="#about">About</a><a href="#projects">Projects</a><a href="#stack">Stack</a><a href="#contact">Contact</a></nav>
     <button class="cmd-trigger" type="button" id="commandButton" aria-label="Open command palette" title="Search (Ctrl / Cmd + K)">⌘ K</button>
   </header>
@@ -27,8 +27,8 @@
       <div class="hero-content">
         <div class="hero-main reveal">
           <div class="eyebrow"><span class="status-dot"></span> OPEN TO COLLABORATION <span class="sep">/</span> INDONESIA</div>
-          <p class="serial">001 — HELLO, WORLD</p>
-          <h1>Building things<br>with <em>curiosity.</em></h1>
+          <p class="serial">001 — HEY, I'M DAP / A MODULA PROJECT</p>
+          <h1>Built in code.<br><em>Driven by curiosity.</em></h1>
           <p class="lede">I'm <strong>Dap</strong> <span class="dim">(@parikesitad-pm)</span> — a full-stack developer in progress and shell enthusiast. Building interfaces, APIs, terminal workflows, and desktop tools.</p>
           <div class="actions">
             <a href="#projects" class="btn primary magnetic">Explore the projects <span>↗</span></a>
@@ -40,7 +40,7 @@
           <div class="terminal-body">
             <p><b>➜</b> <span>~/modula</span> whoami</p><p class="result">Dap (@parikesitad-pm)</p>
             <p><b>➜</b> <span>~/modula</span> cat shells.txt</p><p class="result">zsh / pwsh / bash / starship</p>
-            <p><b>➜</b> <span>~/modula</span> ls projects/</p><p class="result typed" id="typedProjects" aria-label="forge, stack, untitled, dotmod, creative, modula">forge · stack · untitled<span class="caret"></span></p>
+            <p><b>➜</b> <span>~/modula</span> ls projects/</p><p class="result typed" id="typedProjects" aria-label="forge, stack, untitled, point, modula base, shell projects">forge · stack · untitled<span class="caret"></span></p>
             <p><b>➜</b> <span>~/modula</span> <i class="block-caret"></i></p>
           </div>
           <div class="terminal-foot"><span>● LOCAL SESSION</span><span>DAP / MODULA</span></div>
@@ -56,17 +56,17 @@
     </section>
     <section id="projects" class="section projects">
       <div class="section-label reveal"><span>03 / SELECTED WORK</span><div></div><span>A MODULA PROJECT</span></div>
-      <div class="projects-intro reveal"><div><p class="overline">NINE PROJECTS / ONE WORKBENCH</p><h2>Ideas into <em>systems.</em></h2></div><p>Products, creative experiences and experiments. Select a filter, then open a project to explore its stack and source.</p></div>
+      <div class="projects-intro reveal"><div><p class="overline">ELEVEN BUILDS / ONE MODULA ECOSYSTEM</p><h2>Ideas into <em>systems.</em></h2></div><p>Five core MODULA builds, five shell and desktop tools, one creative showcase. Filter by category or open a project to inspect its stack and source.</p></div>
       <div class="filters reveal" role="group" aria-label="Project categories">
-        <button class="filter active" data-filter="all" type="button" aria-pressed="true">All <small>09</small></button>
-        <button class="filter" data-filter="product" type="button" aria-pressed="false">Products</button>
+        <button class="filter active" data-filter="all" type="button" aria-pressed="true">All <small>11</small></button>
+        <button class="filter" data-filter="product" type="button" aria-pressed="false">Core products</button>
         <button class="filter" data-filter="tooling" type="button" aria-pressed="false">Shell &amp; tools</button>
         <button class="filter" data-filter="desktop" type="button" aria-pressed="false">Desktop GUI</button>
         <button class="filter" data-filter="creative" type="button" aria-pressed="false">Creative</button>
-        <button class="filter" data-filter="experiment" type="button" aria-pressed="false">Experiments</button>
+        <button class="filter" data-filter="experiment" type="button" aria-pressed="false">Foundations</button>
       </div>
-      <div class="project-grid" id="projectGrid" aria-live="polite"></div>
-      <div class="more-work reveal"><span>MORE FROM THE WORKBENCH</span><a href="https://github.com/parikesitad-pm/landingpage_sena_reactts" target="_blank" rel="noopener noreferrer">Sena Landing Page ↗</a><a href="https://github.com/parikesitad-pm/xfce_themed" target="_blank" rel="noopener noreferrer">Gundam Glass XFCE ↗</a><a href="https://github.com/parikesitad-pm/dotfiles" target="_blank" rel="noopener noreferrer">Linux Mint Dotfiles ↗</a></div>
+      <div class="project-grid" id="projectGrid" aria-live="polite" aria-label="Projects grouped by core MODULA, shell and desktop workbench, and creative builds"></div>
+      <div class="more-work reveal"><span>MORE FROM THE WORKBENCH</span><a href="https://github.com/parikesitad-pm/landingpage_sena_reactts" target="_blank" rel="noopener noreferrer">Sena Landing Page ↗</a><a href="https://github.com/parikesitad-pm/dotfiles" target="_blank" rel="noopener noreferrer">Linux Mint Dotfiles ↗</a><a href="https://github.com/parikesitad-pm/smart-auto-downloader" target="_blank" rel="noopener noreferrer">Desktop Downloader ↗</a></div>
     </section>
     <section id="stack" class="section stack">
       <div class="section-label reveal"><span>04 / TOOLBOX</span><div></div><span>TECH & SYSTEMS</span></div>
