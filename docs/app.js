@@ -8,8 +8,11 @@ const projects = [
   {id:'stack', name:'STACK', number:'02', category:'product', type:'PRODUCT / MARKDOWN WORKSPACE', tagline:'Markdown notes without the noise.', description:'A Markdown-first notes workspace with offline-friendly local storage, per-user isolation, organization tools, and an intentionally focused editor.', tags:['React','TypeScript','IndexedDB','Auth0','AWS'], links:[['Repository','https://github.com/parikesitad-pm/stack-react_ts_with_aws_deployment'],['Live website','https://stack-md.online']]},
   {id:'untitled', name:'untitled', number:'03', category:'product', type:'PRODUCT / ASSESSMENT', tagline:'Define yourself.', description:'Interactive assessments spanning activity builders, participant areas, weighted scoring, leaderboards and a durable stats/results system. Frontend and Firebase backend are separate repositories.', tags:['React','TypeScript','Firebase','Firestore','Cloudinary'], links:[['Frontend','https://github.com/parikesitad-pm/frontend_untitled_modula_project_react_ts'],['Backend','https://github.com/parikesitad-pm/backend_untitled_modula_project_firebase']]},
   {id:'dotmod', name:'DOTMOD', number:'04', category:'tooling', type:'TOOLING / WORKSTATION', tagline:'Backup first. Rebuild later.', description:'Portable Windows environment backup-and-restore tooling, including configuration snapshots, developer profiles, safe rollback and reproducible workstation setup.', tags:['PowerShell','WinGet','Windows','Developer Tools'], links:[['Repository','https://github.com/parikesitad-pm/windows_dotfiles']]},
-  {id:'afrizal', name:'Afrizal Portfolio', number:'05', category:'creative', type:'CREATIVE / INTERACTIVE PORTFOLIO', tagline:'Motion, interaction and identity.', description:'A multilingual interactive portfolio for Afrizal Pramudyan, using custom interfaces, animation, and 3D to present multidisciplinary creative work.', tags:['React','TypeScript','GSAP','Three.js','i18n'], links:[['Repository','https://github.com/parikesitad-pm/ap_branding_react_ts'],['Live website','https://ap-branding-react-ts.vercel.app']]},
-  {id:'base', name:'MODULA Base', number:'06', category:'experiment', type:'EXPERIMENT / ERP + POS', tagline:'Exploring business-system foundations.', description:'An earlier ERP, inventory, POS and accounting architecture experiment. This is a legacy exploration, not a production-ready or commercially available product.', tags:['React','TypeScript','Ruby','ERP / POS'], links:[['Repository','https://github.com/parikesitad-pm/modula_base']]}
+  {id:'autofailover', name:'AutoFailover', number:'05', category:'desktop', type:'DESKTOP GUI / PYTHON', tagline:'Keep live connections alive.', description:'A Python desktop app with a CustomTkinter UI for network failover automation. Designed around healthy path selection and protection of live workloads such as vMix, OBS and Zoom.', tags:['Python','CustomTkinter','Networking','Automation'], links:[['Repository','https://github.com/parikesitad-pm/smart_auto_failover']]},
+  {id:'afrizal', name:'Afrizal Portfolio', number:'06', category:'creative', type:'CREATIVE / INTERACTIVE PORTFOLIO', tagline:'Motion, interaction and identity.', description:'A multilingual interactive portfolio for Afrizal Pramudyan, using custom interfaces, animation, and 3D to present multidisciplinary creative work.', tags:['React','TypeScript','GSAP','Three.js','i18n'], links:[['Repository','https://github.com/parikesitad-pm/ap_branding_react_ts'],['Live website','https://ap-branding-react-ts.vercel.app']]},
+  {id:'base', name:'MODULA Base', number:'07', category:'experiment', type:'EXPERIMENT / ERP + POS', tagline:'Exploring business-system foundations.', description:'An earlier ERP, inventory, POS and accounting architecture experiment. This is a legacy exploration, not a production-ready or commercially available product.', tags:['React','TypeScript','Ruby','ERP / POS'], links:[['Repository','https://github.com/parikesitad-pm/modula_base']]},
+  {id:'manjaro', name:'Manjaro Dotfiles', number:'08', category:'tooling', type:'SHELL / LINUX ENVIRONMENT', tagline:'A terminal-first development setup.', description:'Modular Manjaro GNOME development environment with automated Bash setup, Zsh configuration, Starship prompts, Kitty, and developer tools.', tags:['Bash','Zsh','Starship','Manjaro'], links:[['Repository','https://github.com/parikesitad-pm/dotfile_v2']]},
+  {id:'gundam', name:'Gundam GNOME', number:'09', category:'tooling', type:'SHELL / DESKTOP AUTOMATION', tagline:'A declarative Linux desktop.', description:'Script-driven GNOME desktop customization inspired by Gundam 00, with automated installation, theme presets, and lightweight Linux workstation tuning.', tags:['Shell','Bash','GNOME','Linux'], links:[['Repository','https://github.com/parikesitad-pm/gundam-celestial-gnome-theme']]}
 ];
 const grid = $('#projectGrid'), modal = $('#projectDialog');
 const closeDialog = $('#closeDialog');
@@ -29,7 +32,7 @@ function renderProjects(filter='all') {
  const selected=projects.filter(p=>filter==='all'||p.category===filter);
  grid.replaceChildren(...selected.map(p=>{
    const card=make('button','project');card.type='button';card.setAttribute('aria-label','Open '+p.name+' details');
-   const top=make('div','project-top');top.append(make('span','project-index',p.number+' / 06'),make('span','project-type',p.category.toUpperCase()));
+   const top=make('div','project-top');top.append(make('span','project-index',p.number+' / 09'),make('span','project-type',p.category.toUpperCase()));
    const heading=make('h3','',p.name),subtitle=make('p','',p.tagline),bottom=make('div','project-bottom');
    bottom.append(make('span','',p.tags[0]),make('span','project-arrow','↗'));
    card.append(top,heading,subtitle,bottom);
@@ -83,7 +86,7 @@ if(!reduced && 'IntersectionObserver' in window){
 }else $$('.reveal').forEach(el=>el.classList.add('visible'));
 const terminal=$('#typedProjects');
 if(!reduced){
- const lines=['forge · stack · untitled','dotmod · creative · modula','build · break · learn · repeat'];
+ const lines=['forge · stack · untitled','zsh · pwsh · bash · starship','build · break · learn · repeat'];
  let line=0,pos=0,erasing=false;
  function type(){
    const target=lines[line];
